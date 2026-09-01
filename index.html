@@ -118,14 +118,14 @@
     margin: 48px auto;
     padding: 0 44px;
     background: var(--card);
-    border: 2px solid var(--border);
-    border-radius: 28px;
-    box-shadow: 0 8px 0 var(--border), 0 24px 48px rgba(28, 35, 51, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(28, 35, 51, 0.08);
     overflow: hidden;
   }
 
   section + section {
-    border-top: 2px dashed var(--border);
+    border-top: 1px solid var(--border);
   }
 
   header {
@@ -136,35 +136,34 @@
   }
 
   .avatar {
-    width: 104px;
-    height: 104px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    border: 4px solid var(--card);
-    box-shadow: 0 0 0 3px var(--indigo), 0 8px 20px rgba(99, 102, 241, 0.3);
-    margin-bottom: 24px;
+    border: 3px solid var(--card);
+    box-shadow: 0 4px 16px rgba(67, 56, 202, 0.25);
+    margin-bottom: 20px;
     object-fit: cover;
   }
 
   .kicker {
     display: inline-block;
     font-family: var(--mono);
-    background: linear-gradient(120deg, rgba(99,102,241,0.14), rgba(6,182,212,0.14));
+    background: rgba(67,56,202,0.1);
     color: var(--indigo);
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.5px;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 20px;
-    border: 2px solid rgba(99,102,241,0.2);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   h1 {
     font-family: var(--heading-font);
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     background: var(--gradient);
     -webkit-background-clip: text;
     background-clip: text;
@@ -188,40 +187,34 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 11px 20px;
-    border-radius: 14px;
+    padding: 10px 18px;
+    border-radius: 10px;
     font-size: 14px;
-    font-weight: 700;
-    border: 2px solid var(--border);
+    font-weight: 600;
+    border: 1px solid var(--border);
     background: var(--card);
     color: var(--text);
-    box-shadow: 0 3px 0 var(--border);
-    transition: transform .12s ease, box-shadow .12s ease;
+    transition: border-color .12s ease, transform .12s ease, box-shadow .12s ease;
   }
 
   .btn:hover {
     border-color: var(--indigo);
     color: var(--indigo);
     text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 0 var(--indigo);
-  }
-
-  .btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 0 var(--border);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(28, 35, 51, 0.08);
   }
 
   .btn.primary {
     background: var(--gradient);
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     color: #ffffff;
-    box-shadow: 0 4px 0 var(--accent-dim, #312e81);
+    box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
   }
 
   .btn.primary:hover {
     color: #ffffff;
-    box-shadow: 0 6px 0 var(--accent-dim, #312e81);
+    box-shadow: 0 6px 16px rgba(67, 56, 202, 0.32);
   }
 
   section {
@@ -229,16 +222,20 @@
   }
 
   h2 {
-    display: inline-block;
-    font-family: var(--heading-font);
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 28px;
-    padding: 4px 16px;
-    background: linear-gradient(120deg, rgba(99,102,241,0.1), rgba(6,182,212,0.1));
-    border-radius: 12px;
-    border: 2px dashed rgba(99,102,241,0.3);
+    margin-bottom: 24px;
+  }
+
+  h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
   .about p {
@@ -255,20 +252,21 @@
 
   .skill-group {
     background: var(--card);
-    border: 2px solid var(--border);
-    border-radius: 18px;
-    padding: 18px 20px;
-    border-top: 5px solid var(--accent-color, var(--indigo));
-    transition: transform .15s ease;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+    border-top: 3px solid var(--accent-color, var(--indigo));
+    transition: transform .15s ease, box-shadow .15s ease;
   }
 
   .skill-group:hover {
-    transform: translateY(-3px) rotate(-0.5deg);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(28, 35, 51, 0.06);
   }
 
   .skill-group h3 {
-    font-family: var(--heading-font);
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 600;
     color: var(--text);
     margin-bottom: 12px;
   }
@@ -281,13 +279,12 @@
 
   .tag {
     font-family: var(--mono);
-    font-size: 12.5px;
-    font-weight: 700;
-    padding: 5px 12px;
-    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
     background: var(--tag-bg, rgba(99,102,241,0.1));
     color: var(--tag-color, var(--indigo));
-    border: 1.5px solid var(--tag-color, var(--indigo));
   }
 
   .projects {
@@ -298,17 +295,16 @@
 
   .project-card {
     background: var(--card);
-    border: 2px solid var(--border);
-    border-left: 6px solid var(--accent-color, var(--indigo));
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: 0 3px 0 var(--border);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-color, var(--indigo));
+    border-radius: 14px;
+    padding: 22px 24px;
     transition: transform .15s ease, box-shadow .15s ease;
   }
 
   .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 0 var(--accent-color, var(--indigo));
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(28, 35, 51, 0.08);
   }
 
   .project-head {
@@ -335,8 +331,7 @@
   }
 
   .project-title {
-    font-family: var(--heading-font);
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 700;
     color: var(--text);
   }
@@ -360,8 +355,8 @@
 
   .contact-card {
     background: var(--gradient);
-    border-radius: 24px;
-    padding: 36px;
+    border-radius: 16px;
+    padding: 32px;
     color: #ffffff;
   }
 
@@ -374,27 +369,25 @@
   .contact-card .btn {
     background: #ffffff;
     color: var(--indigo);
-    border: 2px solid #ffffff;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+    border: 1px solid #ffffff;
   }
 
   .contact-card .btn:hover {
     color: var(--indigo);
     border-color: #ffffff;
-    box-shadow: 0 6px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
   .contact-card .btn.outline {
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.7);
     color: #ffffff;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.1);
   }
 
   .contact-card .btn.outline:hover {
     border-color: #ffffff;
     color: #ffffff;
-    box-shadow: 0 6px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
   footer {
@@ -554,6 +547,28 @@
           <span class="tag" style="--tag-bg: rgba(4,120,87,0.1); --tag-color: var(--green);">prisma</span>
           <span class="tag" style="--tag-bg: rgba(4,120,87,0.1); --tag-color: var(--green);">sqlite</span>
           <span class="tag" style="--tag-bg: rgba(4,120,87,0.1); --tag-color: var(--green);">healthcare</span>
+        </div>
+      </div>
+
+      <div class="project-card" style="--accent-color: var(--purple);">
+        <div class="project-head">
+          <div class="project-head-left">
+            <img class="project-logo" src="collectra-logo-final.png" alt="Collectra logo">
+            <div class="project-title"><a href="https://github.com/EkimBolat/collectra" target="_blank" rel="noopener">collectra</a></div>
+          </div>
+          <div class="project-lang">● TypeScript</div>
+        </div>
+        <p class="project-desc">
+          Share and discover collections — Lego, cards, stamps, and more — with
+          Instagram-style privacy and a public explore feed.
+          <a href="https://collectra-one.vercel.app" target="_blank" rel="noopener">Try it live →</a>
+        </p>
+        <div class="tag-list">
+          <span class="tag" style="--tag-bg: rgba(126,34,206,0.1); --tag-color: var(--purple);">nextjs</span>
+          <span class="tag" style="--tag-bg: rgba(126,34,206,0.1); --tag-color: var(--purple);">typescript</span>
+          <span class="tag" style="--tag-bg: rgba(126,34,206,0.1); --tag-color: var(--purple);">supabase</span>
+          <span class="tag" style="--tag-bg: rgba(126,34,206,0.1); --tag-color: var(--purple);">postgresql</span>
+          <span class="tag" style="--tag-bg: rgba(126,34,206,0.1); --tag-color: var(--purple);">social-network</span>
         </div>
       </div>
 
